@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jai Vardhan — Engineering Manager | AI &amp; IT Transformation Leader</title>
+<meta name="description" content="Jai Vardhan — Senior Engineering Manager at HPE with 20+ years in IT. People leader and coach driving AI, cloud, and IT transformation. Leading 24+ engineers across RSDC, SADB and AI teams." />
+<style>
+  :root{
+    --bg:#0a192f;
+    --bg-light:#112240;
+    --bg-lightest:#233554;
+    --slate:#8892b0;
+    --light-slate:#a8b2d1;
+    --lightest-slate:#ccd6f6;
+    --white:#e6f1ff;
+    --teal:#64ffda;
+    --teal-tint:rgba(100,255,218,0.1);
+    --font-sans:'Inter','Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+    --font-mono:'SF Mono','Fira Code','Roboto Mono',Consolas,Monaco,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--slate);
+    font-family:var(--font-sans);
+    line-height:1.5;
+    font-size:18px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--teal);text-decoration:none;transition:.2s;}
+  ::selection{background:var(--teal-tint);}
+  body::-webkit-scrollbar{width:12px;}
+  body::-webkit-scrollbar-track{background:var(--bg);}
+  body::-webkit-scrollbar-thumb{background:var(--bg-lightest);border-radius:10px;}
+
+  .layout{
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    gap:50px;
+    padding:0 50px;
+  }
+  /* ===== SIDEBAR ===== */
+  header.sidebar{
+    position:sticky;
+    top:0;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:90px 0;
+    max-width:46%;
+    flex:1;
+  }
+  .intro h1{
+    font-size:clamp(34px,5vw,46px);
+    color:var(--lightest-slate);
+    font-weight:700;
+    letter-spacing:-1px;
+  }
+  .intro h2{
+    font-size:clamp(17px,3vw,21px);
+    color:var(--lightest-slate);
+    font-weight:500;
+    margin-top:12px;
+    line-height:1.3;
+  }
+  .intro p.tag{
+    color:var(--teal);
+    font-family:var(--font-mono);
+    font-size:14px;
+    margin-top:18px;
+    letter-spacing:.5px;
+  }
+  .intro p.blurb{
+    margin-top:20px;
+    max-width:340px;
+    font-size:16px;
+    line-height:1.6;
+  }
+  .stats{display:flex;gap:26px;margin-top:26px;}
+  .stats div{display:flex;flex-direction:column;}
+  .stats .num{color:var(--teal);font-size:26px;font-weight:700;font-family:var(--font-mono);}
+  .stats .lbl{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--slate);margin-top:2px;}
+
+  nav.dots{margin-top:44px;}
+  nav.dots ul{list-style:none;}
+  nav.dots li{margin-bottom:2px;}
+  nav.dots a{
+    display:flex;
+    align-items:center;
+    color:var(--slate);
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    padding:8px 0;
+    font-weight:600;
+  }
+  nav.dots a .line{
+    display:inline-block;
+    height:1px;
+    width:30px;
+    background:var(--slate);
+    margin-right:16px;
+    transition:.2s;
+  }
+  nav.dots a:hover .line,nav.dots a.active .line{width:60px;background:var(--lightest-slate);}
+  nav.dots a:hover,nav.dots a.active{color:var(--lightest-slate);}
+  .socials{display:flex;gap:22px;}
+  .socials a{color:var(--slate);font-size:14px;font-family:var(--font-mono);}
+  .socials a:hover{color:var(--teal);transform:translateY(-3px);}
+
+  /* ===== MAIN ===== */
+  main{
+    flex:1;
+    padding:90px 0;
+    max-width:54%;
+  }
+  section{margin-bottom:100px;}
+  .mobile-heading{
+    display:none;
+    font-size:18px;color:var(--lightest-slate);font-weight:700;
+    text-transform:uppercase;letter-spacing:1px;margin-bottom:30px;
+    backdrop-filter:blur(8px);
+    position:sticky;top:0;padding:20px 0;z-index:10;
+  }
+  .about p{margin-bottom:16px;color:var(--slate);}
+  .about strong{color:var(--lightest-slate);font-weight:600;}
+  .about .teal{color:var(--teal);}
+
+  .entry{
+    display:grid;
+    grid-template-columns:130px 1fr;
+    gap:18px;
+    padding:24px;
+    border-radius:8px;
+    margin-bottom:12px;
+    transition:.25s;
+  }
+  .entry:hover{
+    background:rgba(35,53,84,0.5);
+    box-shadow:0 6px 24px rgba(2,12,27,0.5);
+    transform:translateY(-2px);
+  }
+  .entry .when{
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--slate);
+    padding-top:4px;
+  }
+  .entry h3{
+    color:var(--lightest-slate);
+    font-size:17px;
+    font-weight:600;
+  }
+  .entry h3 .co{color:var(--teal);}
+  .entry .role{color:var(--light-slate);font-size:14px;font-weight:500;margin-top:2px;}
+  .entry p{font-size:15px;margin-top:10px;line-height:1.6;}
+  .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tags span{
+    background:var(--teal-tint);
+    color:var(--teal);
+    font-family:var(--font-mono);
+    font-size:11px;
+    padding:5px 12px;
+    border-radius:20px;
+  }
+  .arrow{transition:.2s;display:inline-block;}
+  .entry:hover h3 .arrow{transform:translate(4px,-4px);}
+
+  .proj{
+    background:var(--bg-light);
+    border-radius:10px;
+    padding:26px;
+    margin-bottom:18px;
+    border:1px solid transparent;
+    transition:.25s;
+  }
+  .proj:hover{transform:translateY(-4px);border-color:var(--bg-lightest);box-shadow:0 10px 30px rgba(2,12,27,0.6);}
+  .proj .head{display:flex;justify-content:space-between;align-items:center;gap:14px;}
+  .proj h3{color:var(--lightest-slate);font-size:18px;font-weight:600;}
+  .proj .metric{
+    color:var(--teal);font-family:var(--font-mono);font-size:12px;font-weight:600;
+    background:var(--teal-tint);padding:5px 12px;border-radius:6px;white-space:nowrap;
+  }
+  .proj p{font-size:15px;margin-top:12px;}
+
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 40px;}
+  .skill-col h4{
+    color:var(--teal);font-family:var(--font-mono);font-size:13px;
+    text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;
+  }
+  .skill-col ul{list-style:none;}
+  .skill-col li{
+    font-size:14px;color:var(--light-slate);padding:5px 0 5px 20px;position:relative;
+  }
+  .skill-col li::before{content:"▹";color:var(--teal);position:absolute;left:0;}
+
+  /* education + certs */
+  .edu{display:grid;grid-template-columns:1fr;gap:14px;}
+  .edu .item{
+    background:var(--bg-light);border-radius:10px;padding:22px 24px;transition:.25s;
+    border-left:3px solid var(--teal);
+  }
+  .edu .item:hover{transform:translateX(4px);background:rgba(35,53,84,0.6);}
+  .edu .item h3{color:var(--lightest-slate);font-size:16px;font-weight:600;}
+  .edu .item .sub{color:var(--teal);font-family:var(--font-mono);font-size:13px;margin-top:4px;}
+  .edu .item .yr{color:var(--slate);font-size:13px;margin-top:4px;}
+  .cert-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
+  .cert-chips span{
+    background:rgba(35,53,84,0.6);color:var(--light-slate);
+    font-size:13px;padding:8px 14px;border-radius:6px;border:1px solid var(--bg-lightest);
+  }
+  .cert-chips span b{color:var(--teal);font-weight:600;}
+
+  .contact{text-align:center;max-width:600px;margin:0 auto;}
+  .contact .pre{color:var(--teal);font-family:var(--font-mono);font-size:14px;margin-bottom:14px;}
+  .contact h2{color:var(--lightest-slate);font-size:clamp(34px,5vw,52px);font-weight:700;margin-bottom:18px;}
+  .contact p{margin-bottom:34px;font-size:16px;}
+  .btn{
+    display:inline-block;color:var(--teal);border:1px solid var(--teal);border-radius:6px;
+    padding:18px 32px;font-family:var(--font-mono);font-size:14px;transition:.2s;
+  }
+  .btn:hover{background:var(--teal-tint);transform:translateY(-3px);}
+
+  footer{text-align:center;padding:30px 0 40px;font-family:var(--font-mono);font-size:12px;color:var(--slate);}
+  footer a{font-size:12px;}
+
+  .glow{
+    pointer-events:none;position:fixed;inset:0;z-index:-1;
+    background:radial-gradient(600px at var(--mx,50%) var(--my,50%),rgba(100,255,218,0.06),transparent 80%);
+    transition:background .1s;
+  }
+
+  @media(max-width:900px){
+    body{font-size:16px;}
+    .layout{flex-direction:column;padding:0 28px;gap:0;}
+    header.sidebar{position:relative;height:auto;max-width:100%;padding:80px 0 40px;}
+    nav.dots{display:none;}
+    main{max-width:100%;padding:20px 0 60px;}
+    .socials{margin-top:30px;}
+    .mobile-heading{display:block;}
+    .entry{grid-template-columns:1fr;gap:6px;padding:20px 0;}
+    .entry:hover{background:transparent;box-shadow:none;transform:none;}
+    .skills-grid{grid-template-columns:1fr;}
+    .proj .head{flex-direction:column;align-items:flex-start;gap:10px;}
+  }
+  @media(max-width:480px){.layout{padding:0 18px;}.stats{gap:18px;}}
+</style>
+</head>
+<body>
+<div class="glow" id="glow"></div>
+<div class="layout">
+
+  <!-- ============ SIDEBAR ============ -->
+  <header class="sidebar">
+    <div>
+      <div class="intro">
+        <h1>Jai Vardhan</h1>
+        <h2>Senior Engineering Manager · AI &amp; IT Transformation Leader</h2>
+        <p class="tag">People Leader · Coach · 20+ Years in IT @ HPE</p>
+        <p class="blurb">I build high-performing engineering teams and lead AI, cloud, and IT transformation programs that move business outcomes.</p>
+
+        <div class="stats">
+          <div><span class="num">20+</span><span class="lbl">Years in IT</span></div>
+          <div><span class="num">24+</span><span class="lbl">Engineers Led</span></div>
+          <div><span class="num">3</span><span class="lbl">Teams Owned</span></div>
+        </div>
+      </div>
+
+      <nav class="dots" aria-label="In-page navigation">
+        <ul>
+          <li><a href="#about" class="nav-link"><span class="line"></span>About</a></li>
+          <li><a href="#experience" class="nav-link"><span class="line"></span>Experience</a></li>
+          <li><a href="#impact" class="nav-link"><span class="line"></span>Impact &amp; AI</a></li>
+          <li><a href="#leadership" class="nav-link"><span class="line"></span>Leadership</a></li>
+          <li><a href="#education" class="nav-link"><span class="line"></span>Education</a></li>
+          <li><a href="#skills" class="nav-link"><span class="line"></span>Skills</a></li>
+          <li><a href="#contact" class="nav-link"><span class="line"></span>Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/jai-vardhan-3b356241/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:vardhanjai.t@gmail.com">Email</a>
+      <a href="JaiVardhan_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </header>
+
+  <!-- ============ MAIN ============ -->
+  <main>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <h2 class="mobile-heading">About</h2>
+      <p>I'm a <strong>Senior Engineering Manager</strong> with <strong>20+ years</strong> in the IT industry at <span class="teal">Hewlett Packard Enterprise</span>. I stepped into engineering management in <strong>2020</strong> and into a Senior Engineering Manager role in <strong>2025</strong> — building on years as a Technical Lead. Today I own three teams (RSDC, SADB and a dedicated AI Team), guiding <strong>24+ engineers</strong> while balancing delivery, budget, and the growth of every person on the team.</p>
+      <p>My career spans <strong>Infosys</strong>, <strong>Capgemini</strong> and <strong>HPE</strong> — moving from hands-on .NET/SQL engineering into full-stack consulting, and then into leadership. That depth means I lead from understanding, not from a distance.</p>
+      <p>Today my focus is <span class="teal">accelerating AI and automation</span> to drive business growth and service margin — launching an AI team from scratch, modernizing applications to private cloud, and championing SAFe Agile ways of working. I believe in <strong>servant leadership</strong>, a growth mindset, and leading by example.</p>
+      <p>I recently completed an <strong>MBA in Business Analytics (BITS Pilani)</strong> and am pursuing <strong>AI for Managers at IIM Bangalore</strong> — pairing engineering depth with business strategy.</p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2 class="mobile-heading">Experience</h2>
+
+      <div class="entry">
+        <div class="when">2014 — Present</div>
+        <div>
+          <h3>Senior Engineering Manager · <span class="co">Hewlett Packard Enterprise / HP</span> <span class="arrow">↗</span></h3>
+          <div class="role">Senior Engineering Manager (2025–present) · Engineering Manager (2020–25) · Technical Lead (pre-2020) · Bangalore</div>
+          <p>Lead 24+ software and AI engineers across three teams (RSDC, SADB, AI) using SAFe Agile. Own PI &amp; capacity planning, org budget, hiring and vendor management. Launched the org's AI team, modernized applications to HPE Private Cloud, and partner with GreenLake, Global Remote Support and Product Management (incl. on-site Connected Strategy work in Ireland). Earlier, as Technical Lead, I drove architecture and delivery for the same platforms — the foundation for my move into leadership.</p>
+          <div class="tags"><span>People Leadership</span><span>AI Strategy</span><span>SAFe Agile</span><span>Cloud Modernization</span><span>Budget &amp; Vendor Mgmt</span></div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2011 — 2014</div>
+        <div>
+          <h3>Senior Consultant · <span class="co">Capgemini India</span> <span class="arrow">↗</span></h3>
+          <div class="role">Full-Stack Engineer</div>
+          <p>Designed and delivered full-stack enterprise applications for global clients. Recognized twice with the <strong>Project Star Award</strong> for excellence in customer satisfaction and delivery.</p>
+          <div class="tags"><span>Full-Stack</span><span>.NET / SQL</span><span>Client Delivery</span></div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">2007 — 2011</div>
+        <div>
+          <h3>Senior Systems Engineer · <span class="co">Infosys Technologies</span> <span class="arrow">↗</span></h3>
+          <div class="role">.NET / SQL Engineer</div>
+          <p>Built and maintained mission-critical applications using Microsoft technologies. Earned the <strong>OTS Award</strong> for solving critical issues and driving customer satisfaction — the foundation of my engineering craft.</p>
+          <div class="tags"><span>ASP.NET</span><span>C#</span><span>SQL Server</span><span>Problem Solving</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT & AI -->
+    <section id="impact">
+      <h2 class="mobile-heading">Impact &amp; AI</h2>
+
+      <div class="proj">
+        <div class="head">
+          <h3>Launched an AI Team from the Ground Up</h3>
+          <span class="metric">New capability</span>
+        </div>
+        <p>Stood up a dedicated AI team within the org and delivered real use cases with stakeholders including the Advanced Analytics team — case identification, event classification via predictive analytics, noisy-device anomaly detection, Text-to-SQL, WikiAssist and Intelligent Case Routing — all aimed at accelerating automation and service margin.</p>
+        <div class="tags"><span>Predictive Analytics</span><span>Anomaly Detection</span><span>Intelligent Routing</span><span>GenAI Use Cases</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="head">
+          <h3>Cloud &amp; Container Modernization</h3>
+          <span class="metric">Private Cloud + K8s</span>
+        </div>
+        <p>Led migration of applications and infrastructure to HPE Private Cloud (COLO). Containerized the SADB application on Kubernetes with CI/CD pipelines built on Ansible for automated, scalable deployment — and drove a POC to extend the same to the RSDC Microsoft stack.</p>
+        <div class="tags"><span>Kubernetes</span><span>CI/CD</span><span>Ansible</span><span>Private Cloud</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="head">
+          <h3>Major Incident &amp; SLA Leadership</h3>
+          <span class="metric">24/7 · multi-zone</span>
+        </div>
+        <p>Drove the team through major incidents across multiple time zones to protect customer SLAs, while proactively refining the support approach with L3 leaders to prevent escalations before they happen.</p>
+        <div class="tags"><span>Incident Mgmt</span><span>SLA Ownership</span><span>Stakeholder Mgmt</span></div>
+      </div>
+
+      <div class="proj">
+        <div class="head">
+          <h3>Recognition &amp; Awards</h3>
+          <span class="metric">Global impact</span>
+        </div>
+        <p>Mentored the team to a <strong>Most Impactful Award at the global level</strong> for a volunteering initiative, and has been recognized with multiple bonus rewards at HPE/HP for excellent delivery.</p>
+        <div class="tags"><span>Mentorship</span><span>Recognition</span><span>Culture</span></div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section id="leadership">
+      <h2 class="mobile-heading">Leadership &amp; Coaching</h2>
+
+      <div class="proj">
+        <div class="head"><h3>How I lead</h3></div>
+        <p>I lead by example and believe in servant leadership. I set clear direction, remove impediments, and instill a sense of ownership in every team member — keeping a constant, genuine connection with the people I manage.</p>
+      </div>
+
+      <div class="proj">
+        <div class="head"><h3>Coaching &amp; growth</h3></div>
+        <p>As a Scrum Master and people manager, I coach teams through Agile adoption and continuous improvement. I work with each engineer on their skills, interests and training needs to build a high-performance, innovation-minded agile team.</p>
+      </div>
+
+      <div class="proj">
+        <div class="head"><h3>Building the right team</h3></div>
+        <p>I partner with resource vendors to filter, evaluate and onboard the right talent — including SOW review and budget discussions — and introduce tools and practices that keep teams and applications running smoothly.</p>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2 class="mobile-heading">Education &amp; Certifications</h2>
+      <div class="edu">
+        <div class="item">
+          <h3>AI for Managers <span style="color:var(--slate);font-weight:400;font-size:13px;">(Pursuing)</span></h3>
+          <div class="sub">Indian Institute of Management (IIM) Bangalore</div>
+        </div>
+        <div class="item">
+          <h3>MBA, Business Analytics</h3>
+          <div class="sub">BITS Pilani (WILP)</div>
+          <div class="yr">2022 — 2024</div>
+        </div>
+        <div class="item">
+          <h3>Bachelor of Engineering, Information Science &amp; Engineering</h3>
+          <div class="sub">Siddaganga Institute of Technology · VTU</div>
+          <div class="yr">2003 — 2007</div>
+        </div>
+      </div>
+
+      <div class="cert-chips" style="margin-top:22px;">
+        <span><b>SAFe 4.6</b> Scrum Master</span>
+        <span><b>SAFe 4.0</b> PO / PM</span>
+        <span>Leading <b>SAFe 4.5</b></span>
+        <span>Driving Digital Transformation · <b>IMD</b></span>
+        <span>Customer Centricity · <b>Wharton</b></span>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="mobile-heading">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-col">
+          <h4>Leadership</h4>
+          <ul>
+            <li>People &amp; performance management</li>
+            <li>Coaching &amp; servant leadership</li>
+            <li>PI, capacity &amp; budget planning</li>
+            <li>Hiring &amp; vendor management</li>
+            <li>Stakeholder management</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h4>AI &amp; Data</h4>
+          <ul>
+            <li>AI use-case strategy</li>
+            <li>Predictive analytics</li>
+            <li>Anomaly detection</li>
+            <li>Intelligent automation</li>
+            <li>Business analytics</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h4>Cloud &amp; DevOps</h4>
+          <ul>
+            <li>Private &amp; hybrid cloud</li>
+            <li>Kubernetes &amp; containers</li>
+            <li>CI/CD &amp; Ansible</li>
+            <li>Jenkins, GitHub, SVN</li>
+            <li>App modernization</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h4>Engineering</h4>
+          <ul>
+            <li>C#, ASP.NET, MVC</li>
+            <li>SQL Server, Oracle, PL/SQL</li>
+            <li>Python scripting</li>
+            <li>SAFe &amp; Agile</li>
+            <li>Solution design</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <p class="pre">Let's connect</p>
+      <h2>Get In Touch</h2>
+      <p>Whether you'd like to talk leadership, AI &amp; IT transformation, or building great engineering teams — my inbox is always open. I'll do my best to get back to you.</p>
+      <a class="btn" href="mailto:vardhanjai.t@gmail.com">Say Hello</a>
+    </section>
+
+    <footer>
+      Designed &amp; built for Jai Vardhan · Engineering Manager, HPE · Bangalore<br />
+      <a href="https://www.linkedin.com/in/jai-vardhan-3b356241/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:vardhanjai.t@gmail.com">vardhanjai.t@gmail.com</a>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  const links=document.querySelectorAll('.nav-link');
+  const sections=[...links].map(l=>document.querySelector(l.getAttribute('href')));
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        const id='#'+e.target.id;
+        links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')===id));
+      }
+    });
+  },{rootMargin:'-40% 0px -55% 0px'});
+  sections.forEach(s=>s&&obs.observe(s));
+
+  const glow=document.getElementById('glow');
+  window.addEventListener('mousemove',e=>{
+    glow.style.setProperty('--mx',e.clientX+'px');
+    glow.style.setProperty('--my',e.clientY+'px');
+  });
+</script>
+</body>
+</html>
